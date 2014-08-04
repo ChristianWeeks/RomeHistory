@@ -1,15 +1,11 @@
 {
 "type": "FeatureCollection",
+                                                                                
 "features": [
-{ "type": "Feature", "properties": { "id": 0, "Name": "Rome Conquers Veii", "Year End": -396, "Year Start": -396 }, "geometry": { "type": "Point", "coordinates": [ 12.465863, 42.020649 ] } }
-,
-{ "type": "Feature", "properties": { "id": 0, "Name": "Latin War", "Year End": -340, "Year Start": -338 }, "geometry": { "type": "Point", "coordinates": [ 12.737291, 41.817858 ] } }
-,
-{ "type": "Feature", "properties": { "id": 0, "Name": "2nd Samnite War", "Year End": -304, "Year Start": -326 }, "geometry": { "type": "Point", "coordinates": [ 13.398700, 41.530832 ] } }
-,
-{ "type": "Feature", "properties": { "id": 0, "Name": "3rd Samnite War", "Year End": -290, "Year Start": -298 }, "geometry": { "type": "Point", "coordinates": [ 13.791802, 41.596349 ] } }
-,
-{ "type": "Feature", "properties": { "id": 0, "Name": "Rome Founded", "Year End": -753, "Year Start": -753 }, "geometry": { "type": "Point", "coordinates": [ 12.512174, 41.892248 ] } }
-
+{ "type": "Feature", "properties": { "id": null, "Name": "Rome Conquers Veii", "YearStart": -396, "YearEnd": -396 }, "geometry": { "type": "Point", "coordinates": [ 12.465863466536568, 42.020649122602855 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "Latin War", "YearStart": -340, "YearEnd": -338 }, "geometry": { "type": "Point", "coordinates": [ 12.737290941089084, 41.81785848069579 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "2nd Samnite War", "YearStart": -304, "YearEnd": -326 }, "geometry": { "type": "Point", "coordinates": [ 13.398700419309012, 41.530831725996578 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "3rd Samnite War", "YearStart": -290, "YearEnd": -298 }, "geometry": { "type": "Point", "coordinates": [ 13.791802279005761, 41.596348702612701 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "Rome Founded", "YearStart": -753, "YearEnd": -753 }, "geometry": { "type": "Point", "coordinates": [ 12.512173829472054, 41.892247547895352 ] } }
 ]
 }

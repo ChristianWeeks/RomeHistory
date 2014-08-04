@@ -1,39 +1,23 @@
 {
 "type": "FeatureCollection",
+                                                                                
 "features": [
-{ "type": "Feature", "properties": { "id": 0, "Name": "Lugdunum", "Founded": -43, "Destroyed": 0, "Sovereign": "Rome", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ 4.820266, 45.760772 ] } }
-,
-{ "type": "Feature", "properties": { "id": 0, "Name": "Panormus", "Founded": -700, "Destroyed": 0, "Sovereign": "Carthage", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ 13.363992, 38.110885 ] } }
-,
-{ "type": "Feature", "properties": { "id": 0, "Name": "Iol", "Founded": -700, "Destroyed": 0, "Sovereign": "Carthage", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ 2.285383, 36.597754 ] } }
-,
-{ "type": "Feature", "properties": { "id": 0, "Name": "Tingis", "Founded": -700, "Destroyed": 0, "Sovereign": "", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ -5.897999, 35.652438 ] } }
-,
-{ "type": "Feature", "properties": { "id": 0, "Name": "Gades", "Founded": -700, "Destroyed": 0, "Sovereign": "Carthage", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ -6.208425, 36.533797 ] } }
-,
-{ "type": "Feature", "properties": { "id": 0, "Name": "Carthago Nova", "Founded": -228, "Destroyed": 0, "Sovereign": "Carthage", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ -0.920269, 37.599228 ] } }
-,
-{ "type": "Feature", "properties": { "id": 0, "Name": "Utica", "Founded": -700, "Destroyed": 0, "Sovereign": "Carthage", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ 10.111542, 37.193647 ] } }
-,
-{ "type": "Feature", "properties": { "id": 0, "Name": "Rhegium", "Founded": -700, "Destroyed": 0, "Sovereign": "", "Rank": 3 }, "geometry": { "type": "Point", "coordinates": [ 15.674245, 38.114004 ] } }
-,
-{ "type": "Feature", "properties": { "id": 0, "Name": "Neapolis", "Founded": -700, "Destroyed": 0, "Sovereign": "", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ 14.264070, 40.846998 ] } }
-,
-{ "type": "Feature", "properties": { "id": 0, "Name": "Capua", "Founded": -700, "Destroyed": 0, "Sovereign": "", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ 14.201673, 41.154304 ] } }
-,
-{ "type": "Feature", "properties": { "id": 0, "Name": "Carthage", "Founded": -700, "Destroyed": 0, "Sovereign": "Carthage", "Rank": 1 }, "geometry": { "type": "Point", "coordinates": [ 10.192658, 36.964337 ] } }
-,
-{ "type": "Feature", "properties": { "id": 0, "Name": "Lilybaeum", "Founded": -700, "Destroyed": 0, "Sovereign": "Carthage", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ 12.638625, 37.672545 ] } }
-,
-{ "type": "Feature", "properties": { "id": 0, "Name": "Syracuse", "Founded": -700, "Destroyed": 0, "Sovereign": "Greece", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ 15.285433, 37.069243 ] } }
-,
-{ "type": "Feature", "properties": { "id": 4, "Name": "Brundisium", "Founded": -700, "Destroyed": 0, "Sovereign": "", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ 17.962270, 40.630558 ] } }
-,
-{ "type": "Feature", "properties": { "id": 3, "Name": "Ostia", "Founded": -700, "Destroyed": 0, "Sovereign": "", "Rank": 3 }, "geometry": { "type": "Point", "coordinates": [ 12.266973, 41.738107 ] } }
-,
-{ "type": "Feature", "properties": { "id": 2, "Name": "Veii", "Founded": -700, "Destroyed": 396, "Sovereign": "Veii", "Rank": 1 }, "geometry": { "type": "Point", "coordinates": [ 12.461184, 42.032934 ] } }
-,
-{ "type": "Feature", "properties": { "id": 1, "Name": "Rome", "Founded": -700, "Destroyed": 2000, "Sovereign": "Rome", "Rank": 1 }, "geometry": { "type": "Point", "coordinates": [ 12.512271, 41.892150 ] } }
-
+{ "type": "Feature", "properties": { "id": null, "Name": "Lugdunum", "Founded": -43, "Destroyed": null, "Sovereign": "Rome", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ 4.820266284637841, 45.760771528774981 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "Panormus", "Founded": -700, "Destroyed": null, "Sovereign": "Carthage", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ 13.36399202098252, 38.110884544835933 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "Iol", "Founded": -700, "Destroyed": null, "Sovereign": "Carthage", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ 2.28538326079998, 36.597754370606559 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "Tingis", "Founded": -700, "Destroyed": null, "Sovereign": null, "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ -5.897999104156034, 35.652437993716866 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "Gades", "Founded": -700, "Destroyed": null, "Sovereign": "Carthage", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ -6.208424779075258, 36.533797322005121 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "Carthago Nova", "Founded": -228, "Destroyed": null, "Sovereign": "Carthage", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ -0.920268809345791, 37.599228156024324 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "Utica", "Founded": -700, "Destroyed": null, "Sovereign": "Carthage", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ 10.111542110396563, 37.19364687221028 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "Rhegium", "Founded": -700, "Destroyed": null, "Sovereign": null, "Rank": 3 }, "geometry": { "type": "Point", "coordinates": [ 15.674245410707817, 38.114004400865269 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "Neapolis", "Founded": -700, "Destroyed": null, "Sovereign": null, "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ 14.264070485446629, 40.846998282566148 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "Capua", "Founded": -700, "Destroyed": null, "Sovereign": null, "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ 14.20167336485985, 41.154304101456027 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "Carthage", "Founded": -700, "Destroyed": null, "Sovereign": "Carthage", "Rank": 1 }, "geometry": { "type": "Point", "coordinates": [ 10.19265836715938, 36.96433745405389 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "Lilybaeum", "Founded": -700, "Destroyed": null, "Sovereign": "Carthage", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ 12.638625494161078, 37.672544772713813 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "Syracuse", "Founded": -700, "Destroyed": null, "Sovereign": "Greece", "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ 15.285433353051456, 37.069242613040416 ] } },
+{ "type": "Feature", "properties": { "id": 4, "Name": "Brundisium", "Founded": -700, "Destroyed": null, "Sovereign": null, "Rank": 2 }, "geometry": { "type": "Point", "coordinates": [ 17.962269826224233, 40.630558270530763 ] } },
+{ "type": "Feature", "properties": { "id": 3, "Name": "Ostia", "Founded": -700, "Destroyed": null, "Sovereign": null, "Rank": 3 }, "geometry": { "type": "Point", "coordinates": [ 12.266972644666067, 41.738107160946072 ] } },
+{ "type": "Feature", "properties": { "id": 2, "Name": "Veii", "Founded": -700, "Destroyed": 396, "Sovereign": "Veii", "Rank": 1 }, "geometry": { "type": "Point", "coordinates": [ 12.461183682492413, 42.032933555718593 ] } },
+{ "type": "Feature", "properties": { "id": 1, "Name": "Rome", "Founded": -700, "Destroyed": 2000, "Sovereign": "Rome", "Rank": 1 }, "geometry": { "type": "Point", "coordinates": [ 12.512271324972842, 41.892150052394683 ] } }
 ]
 }

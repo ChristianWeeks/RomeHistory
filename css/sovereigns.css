@@ -1,0 +1,25 @@
+/*This file contains the classes that designate the properties and color schemes for the
+ * sovereign nations of the ancient world (Rome, Carthage, Greece, etc.)*/
+.Rome{
+	fill: #f66;
+	stroke: #dd4;
+}
+.Rome.City{
+	fill: #c33;
+	stroke: #dd0;
+}
+
+.Veii{
+	fill: #f96;
+	stroke: #dc6;
+}
+
+.Latin{
+	fill: #dd9;
+	stroke: #9bb;
+}
+
+.CityLabel{
+	font-size: 7;
+	font-style: Times New Roman;
+}

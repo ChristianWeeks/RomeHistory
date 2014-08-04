@@ -27,7 +27,11 @@ ogr2ogr \
 
 topojson \
 	-o json/RomeHistory.json \
-	--properties name=NAME \
+	--id-property Name \
+	-p Name \
+	-p Sovereign \
+	-p YearStart \
+	-p YearEnd \
 	-- \
 	json/rivers.json \
 	json/cities.json \
