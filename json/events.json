@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"features": [
+{ "type": "Feature", "properties": { "id": 0, "Name": "Rome Conquers Veii", "Year End": -396, "Year Start": -396 }, "geometry": { "type": "Point", "coordinates": [ 12.465863, 42.020649 ] } }
+,
+{ "type": "Feature", "properties": { "id": 0, "Name": "Latin War", "Year End": -340, "Year Start": -338 }, "geometry": { "type": "Point", "coordinates": [ 12.737291, 41.817858 ] } }
+,
+{ "type": "Feature", "properties": { "id": 0, "Name": "2nd Samnite War", "Year End": -304, "Year Start": -326 }, "geometry": { "type": "Point", "coordinates": [ 13.398700, 41.530832 ] } }
+,
+{ "type": "Feature", "properties": { "id": 0, "Name": "3rd Samnite War", "Year End": -290, "Year Start": -298 }, "geometry": { "type": "Point", "coordinates": [ 13.791802, 41.596349 ] } }
+,
+{ "type": "Feature", "properties": { "id": 0, "Name": "Rome Founded", "Year End": -753, "Year Start": -753 }, "geometry": { "type": "Point", "coordinates": [ 12.512174, 41.892248 ] } }
+
+]
+}

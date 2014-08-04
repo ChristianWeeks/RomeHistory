@@ -1,0 +1,22 @@
+
+//Advanced Event Data that can't be input in the QGIS attribute table.
+//All of this data is used by the event object's corresponding methods to manipulate the map 
+{
+	"type": "Event"
+	"Data": [{
+		//name of event, must match up with event name in QGIS
+		"name": ,
+		//changes sovereign of a territory. [territory name, prev sovereign, resulting sovereign
+		"modifyTerritory": [[0,0,0]],
+		//makes a new territory visible. accepts the territory name
+		"foundTerritory": [],
+		//makes a new city visible. accepts the city name
+		"foundCity": [],
+		//makes a city invisible. accepts the city name
+		"destroyCity": [],
+		//writes a brief sentence about the event in the text box
+		"updateHistoryBox": "string"
+		//moves the viewbox to give a proper view of the event and its effects
+		"modifyViewBox": []
+	}]
+}

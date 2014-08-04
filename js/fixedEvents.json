@@ -1,0 +1,45 @@
+//Advanced Event Data that can't be 
+
+{
+	"type": "Event"
+	"Data": [
+	"Rome Founded" : {
+		"name": "Rome Founded",
+		"modifyTerritory": [["Rome Proper", "Rome", "Rome"]],
+		"foundTerritory": ["Rome Proper"],
+		"foundCity": ["Rome"],
+		"destroyCity": [],
+		"updateHistoryBox": "Rome is founded by Romulus",
+		"modifyViewBox": []
+	},
+	"Latin War" : {
+		"name": "Latin War",
+		"modifyTerritory": [["Latinum", "Latin", "Rome"]],
+		"foundTerritory": [],
+		"foundCity": [],
+		"destroyCity": [],
+		"updateHistoryBox": "Rome defeats the Latin League",
+		"modifyViewBox": []
+	},
+	
+	"Second Samnite War" : {
+		"name": "Second Samnite War",
+		"modifyTerritory": [["Samnium1", "Samnium", "Rome"]],
+		"foundTerritory": [],
+		"foundCity": [],
+		"destroyCity": [],
+		"updateHistoryBox": "Rome seizes territory from Samnium",
+		"modifyViewBox": []
+	},	
+	"Third Samnite War" : {	
+		"name": "Third Samnite War",
+		"modifyTerritory": [["Samnium", "Samnium", "Rome"],
+							["Umbria1", "Umbria", "Rome"]],
+		"foundTerritory": [],
+		"foundCity": [],
+		"destroyCity": [],
+		"updateHistoryBox": "Rome defeats the Samnites"
+		"modifyViewBox": []
+	}
+	]
+}
