@@ -1,5 +1,16 @@
 /*This file contains the classes that designate the properties and color schemes for the
  * sovereign nations of the ancient world (Rome, Carthage, Greece, etc.)*/
+
+.Land{
+	fill: #ffc;
+	stroke: #ccf;
+
+}
+.River{
+	fill: none;
+	stroke: #99f;
+	stroke-width: 1;
+}
 .Rome{
 	fill: #f66;
 	stroke: #dd4;

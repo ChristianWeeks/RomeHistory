@@ -1,8 +1,7 @@
-//Advanced Event Data that can't be 
 
 {
-	"type": "Event"
-	"Data": [
+	"type": "Event",
+	"Data":	{ 
 	"Rome Founded" : {
 		"name": "Rome Founded",
 		"modifyTerritory": [["Rome Proper", "Rome", "Rome"]],
@@ -12,6 +11,15 @@
 		"updateHistoryBox": "Rome is founded by Romulus",
 		"modifyViewBox": []
 	},
+	"Rome Conquers Veii" : {
+		"name": "Latin War",
+		"modifyTerritory": [["Veii", "Veii", "Rome"]],
+		"foundTerritory": [],
+		"foundCity": [],
+		"destroyCity": ["Veii"],
+		"updateHistoryBox": "Rome conquers and razes Veii",
+		"modifyViewBox": []
+	},	
 	"Latin War" : {
 		"name": "Latin War",
 		"modifyTerritory": [["Latinum", "Latin", "Rome"]],
@@ -20,10 +28,9 @@
 		"destroyCity": [],
 		"updateHistoryBox": "Rome defeats the Latin League",
 		"modifyViewBox": []
-	},
-	
-	"Second Samnite War" : {
-		"name": "Second Samnite War",
+	},	
+	"2nd Samnite War" : {
+		"name": "2nd Samnite War",
 		"modifyTerritory": [["Samnium1", "Samnium", "Rome"]],
 		"foundTerritory": [],
 		"foundCity": [],
@@ -31,15 +38,15 @@
 		"updateHistoryBox": "Rome seizes territory from Samnium",
 		"modifyViewBox": []
 	},	
-	"Third Samnite War" : {	
-		"name": "Third Samnite War",
+	"3rd Samnite War" : {	
+		"name": "3rd Samnite War",
 		"modifyTerritory": [["Samnium", "Samnium", "Rome"],
 							["Umbria1", "Umbria", "Rome"]],
 		"foundTerritory": [],
 		"foundCity": [],
 		"destroyCity": [],
-		"updateHistoryBox": "Rome defeats the Samnites"
+		"updateHistoryBox": "Rome defeats the Samnites",
 		"modifyViewBox": []
 	}
-	]
+	}
 }

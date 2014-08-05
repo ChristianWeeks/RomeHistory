@@ -1,12 +1,16 @@
 //Only 1 timeline will exist, so no need for prototype
 function timeline(svg, events){
-	//this.year
 
-	//this.currEvent = events[0];
-	
+	this.currEvent = events[0];
+	this.year = events[0].properties.YearStart;
+	this.currEventIndex = 0;
 	//event incrementers are private - nothing should change the current event other than clicking the buttons
 
+	console.log(this.currEvent);
 	var nextEvent = function(){
+		this.currEventIndex += 1;
+		this.currEvent = events[currEventIndex];
+		this.currEvent.happen();	
 	}
 	//decrements the event counter and reverts to conditions before event occurrence
 	var prevEvent = function(){
@@ -49,6 +53,8 @@ function timeline(svg, events){
 	}
 
 	this.createSvgElements(svg);
+	this.currEvent.happen();
+	console.log("hello");
 
 }
 

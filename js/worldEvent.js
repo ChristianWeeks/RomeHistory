@@ -1,19 +1,15 @@
-function worldEvent(){
-
-	var data = {}
-
-
-}
-
-//update function - makes all changes to the map that are a consequence of this event
-worldEvent.prototype.happen = function(){
-
-
+function worldEvent(eventData, modifiers, data, dataMap){
+	this.coordinates = eventData.geometry.coordinates;
+	this.properties = eventData.properties;
+	this.modifiers = modifiers;
+	
 }
 
 
 //makes a territory or province visible
 worldEvent.prototype.foundTerritory = function(){
+	var index = dataMap.territories[this.modifiers.foundTerritory[0]];
+	data.territories[index].properties.opacity = 1;
 
 }
 
@@ -24,6 +20,8 @@ worldEvent.prototype.modifyTerritory = function(){
 
 //makes a city visible
 worldEvent.prototype.foundCity = function(){
+	var index = dataMap.cities[this.modifiers.foundCity[0]];
+	data.cities[index].properties.opacity = 1;
 
 }
 
@@ -41,3 +39,25 @@ worldEvent.prototype.writeToWrittenTimeline = function(){
 worldEvent.prototype.modifyViewbox = function(){
 
 }
+
+//update function - makes all changes to the map that are a consequence of this event
+worldEvent.prototype.happen = function(){	
+	console.log("happen!");
+	this.foundTerritory();
+	this.foundCity();
+
+	svg.selectAll("#territory")
+		.data(data.territories)
+		.transition().duration(5000)
+		.attr("opacity", function(d) { return d.properties.opacity;});
+	svg.selectAll("#city")
+		.data(data.cities)
+		.transition().duration(5000)
+		.attr("opacity", function(d) { return d.properties.opacity;});
+	svg.selectAll(".CityLabel")
+		.data(data.cities)
+		.transition().duration(5000)
+		.attr("opacity", function(d) { return d.properties.opacity;});
+//	elements.territories
+}
+
