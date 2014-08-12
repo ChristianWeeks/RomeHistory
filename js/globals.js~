@@ -1,0 +1,50 @@
+d3.selection.prototype.moveToFront = function() {
+
+	return this.each(function(){
+		this.parentNode.appendChild(this);
+	});
+};
+
+function MouseWheelHandler(e){
+	var e = window.event || e;
+	var delta = e.wheelDelta 
+	console.log(e);
+	var shift = e.wheelDelta / 120 * 30;
+	console.log(shift);
+	//d3.select(this).attr("viewBox"
+}
+
+
+var width = 1200,
+    height = 800;
+
+var projection = d3.geo.mercator()
+    .scale(500)
+    .translate([width / 2, height / 2]);
+
+var projection = d3.geo.albers()
+	.center([0,41.9])
+	.rotate([-12.5, 0])
+	.parallels([28, 58])
+	.scale(7000)
+	.translate([width / 2, height / 2]);
+var path = d3.geo.path()
+    .projection(projection);
+
+var center = projection([450, 340]);
+
+
+var svg = d3.select("body").append("svg")
+    .style("width", "calc(100% - 200px)")
+    .style("height", "calc(100% - 120px)")
+	.attr("viewBox", "-1000 -500 " + 2*width + " " + 2*height)
+	.attr("preserveAspectRatio", "xMidYMid");
+
+	
+var timelineSvg = d3.select("body").append("svg")
+    .style("width", "calc(100% - 200px)")
+    .style("height", 100);
+var test = "hello";
+var elements = {};
+var data = {};
+var dataMap = {};

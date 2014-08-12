@@ -1,53 +1,3 @@
-d3.selection.prototype.moveToFront = function() {
-
-	return this.each(function(){
-		this.parentNode.appendChild(this);
-	});
-};
-
-function MouseWheelHandler(e){
-	var e = window.event || e;
-	var delta = e.wheelDelta 
-	console.log(e);
-	var shift = e.wheelDelta / 120 * 30;
-	console.log(shift);
-	//d3.select(this).attr("viewBox"
-}
-
-
-var width = 1200,
-    height = 800;
-
-var projection = d3.geo.mercator()
-    .scale(500)
-    .translate([width / 2, height / 2]);
-
-var projection = d3.geo.albers()
-	.center([0,41.9])
-	.rotate([-12.5, 0])
-	.parallels([28, 58])
-	.scale(7000)
-	.translate([width / 2, height / 2]);
-var path = d3.geo.path()
-    .projection(projection);
-
-var center = projection([450, 340]);
-
-
-var svg = d3.select("body").append("svg")
-    .style("width", "calc(100% - 200px)")
-    .style("height", "calc(100% - 120px)")
-	.attr("viewBox", "-1000 -500 " + 2*width + " " + 2*height)
-	.attr("preserveAspectRatio", "xMidYMid");
-
-	
-var timelineSvg = d3.select("body").append("svg")
-    .style("width", "calc(100% - 200px)")
-    .style("height", 100);
-var test = "hello";
-var elements = {};
-var data = {};
-var dataMap = {};
 
 d3.json("js/fixedEvents.json", function(error, eventData){	
 	if(error)
@@ -55,13 +5,6 @@ d3.json("js/fixedEvents.json", function(error, eventData){
 	d3.json("json/RomeHistory.json", function(error, Europe) {
 		if(error)
 			console.log(error);
-		var zoom = d3.behavior.zoom()
-			.scale(2)
-			.scaleExtent([.5, 10])
-			.translate([-800,-800])
-			.on("zoom", zoomed);
-		console.log(zoom);
-		svg.call(zoom);
 	//	svg.transition().duration(3000).attr("viewBox", "450 340 " + 300 + " " + 120); 
 		//all data will be stored in a single object
 		dataMap.cities = {};
@@ -121,7 +64,7 @@ d3.json("js/fixedEvents.json", function(error, eventData){
 			.attr("id", "city")
 			.attr("r", 1)
 			.attr("stroke", "blue")
-			.attr("opacity", 1)
+			.attr("opacity", 0)
 			.attr("stroke-width", 1);
 
 		elements.cityLabels = svg.selectAll(".CityLabel")
@@ -131,9 +74,11 @@ d3.json("js/fixedEvents.json", function(error, eventData){
 			.attr("x", function(d) { return projection(d.geometry.coordinates)[0];})
 			.attr("y", function(d) { return projection(d.geometry.coordinates)[1];})
 			.attr("class", "CityLabel")
-			.attr("opacity", 1)
+			.attr("opacity", 0)
 			.text(function(d) { return d.properties.Name;})
 			.attr("transform", function(d) { return "translate(" + projection(d.geometry.coordinates) + ")";});
+		console.log(projection(data.cities[16].geometry.coordinates));
+		console.log(data);
 
 		elements.events = svg.selectAll(".events")
 			.data(data.events)
@@ -157,14 +102,14 @@ d3.json("js/fixedEvents.json", function(error, eventData){
 			.attr("opacity", 0)
 			.text(function(d) { return d.properties.Name;})
 			.attr("transform", function(d) { return "translate(" + projection(d.geometry.coordinates) + ")";});
-
+		
 		var worldEventObjects = new Array(data.events.length);
 		//sorting the events sequentially
 		index = 0;
 		data.events.sort(function(a, b) { return a.properties.YearStart - b.properties.YearEnd;});
 		data.events.forEach(function(currEvent){
 			if(eventData.Data[currEvent.properties.Name]){
-				worldEventObjects[index] = new worldEvent(currEvent, eventData.Data[currEvent.properties.Name], data, dataMap, zoom);	
+				worldEventObjects[index] = new worldEvent(currEvent, eventData.Data[currEvent.properties.Name], zoom);	
 			}
 			else
 				console.log("No match found for " + currEvent.properties.Name);
@@ -172,25 +117,7 @@ d3.json("js/fixedEvents.json", function(error, eventData){
 		});
 		var centerSpot;
 
-		zoomed()
-		function zoomed() {
-		/*	if(centerSpot)
-				centerSpot.remove();
-			centerSpot = svg.append("circle")
-				.attr("r", 10)
-				.attr("cx", zoom.translate	*/
-			elements.land.attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")")
-				.style("stroke-width", 4 / zoom.scale() );
-			elements.rivers.attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")")
-				.style("stroke-width", 4 / zoom.scale());
-			elements.territories.attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")")
-				.style("stroke-width", 10 / zoom.scale() );
-			elements.cities.attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")")
-				.style("stroke-width", 4 / zoom.scale());
-			elements.cityLabels.attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")")
-				.style("font-size", 40 / zoom.scale() );
-
-		}
+		//zoomed();
 		timeline(timelineSvg, worldEventObjects);
 		/*svg.selectAll(".CityLabel")
 			.data(data.cities)
