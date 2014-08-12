@@ -6,7 +6,6 @@ function timeline(svg, events){
 	this.currEventIndex = 0;
 	//event incrementers are private - nothing should change the current event other than clicking the buttons
 
-	console.log(this.currEvent);
 	var nextEvent = function(){
 		this.currEventIndex += 1;
 		this.currEvent = events[currEventIndex];
@@ -54,7 +53,6 @@ function timeline(svg, events){
 
 	this.createSvgElements(svg);
 	this.currEvent.happen();
-	console.log("hello");
 
 }
 

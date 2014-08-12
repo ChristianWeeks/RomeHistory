@@ -1,6 +1,11 @@
 /*This file contains the classes that designate the properties and color schemes for the
  * sovereign nations of the ancient world (Rome, Carthage, Greece, etc.)*/
 
+.stop-scrolling{
+	height: 100%;
+	overflow: hidden;
+}
+
 .Land{
 	fill: #ffc;
 	stroke: #ccf;
@@ -31,6 +36,8 @@
 }
 
 .CityLabel{
+	-webkit-user-select: none;
+	-moz-user-select: none;
 	font-size: 7;
 	font-style: Times New Roman;
 }

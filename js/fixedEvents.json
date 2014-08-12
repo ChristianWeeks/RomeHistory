@@ -9,7 +9,7 @@
 		"foundCity": ["Rome"],
 		"destroyCity": [],
 		"updateHistoryBox": "Rome is founded by Romulus",
-		"modifyViewBox": []
+		"modifyViewBox": [7]
 	},
 	"Rome Conquers Veii" : {
 		"name": "Latin War",

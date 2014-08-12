@@ -1,7 +1,8 @@
-function worldEvent(eventData, modifiers, data, dataMap){
+function worldEvent(eventData, modifiers, data, dataMap, zoom){
 	this.coordinates = eventData.geometry.coordinates;
 	this.properties = eventData.properties;
 	this.modifiers = modifiers;
+	this.zoom = zoom;
 	
 }
 
@@ -37,14 +38,15 @@ worldEvent.prototype.writeToWrittenTimeline = function(){
 
 //moves the viewbox to give an appropriate view of the event
 worldEvent.prototype.modifyViewbox = function(){
+	this.zoom.translate([this.coordinates[0], this.coordinates[1]]).scale(7);
 
 }
 
 //update function - makes all changes to the map that are a consequence of this event
 worldEvent.prototype.happen = function(){	
-	console.log("happen!");
 	this.foundTerritory();
 	this.foundCity();
+	this.modifyViewbox();
 
 	svg.selectAll("#territory")
 		.data(data.territories)
