@@ -2,7 +2,6 @@ function worldEvent(eventData, modifiers){
 	this.coordinates = projection(eventData.geometry.coordinates);
 	this.properties = eventData.properties;
 	this.modifiers = modifiers;
-	
 }
 
 
@@ -37,7 +36,7 @@ worldEvent.prototype.writeToWrittenTimeline = function(){
 
 //moves the viewbox to give an appropriate view of the event
 worldEvent.prototype.modifyViewbox = function(){
-	var scaleFactor = 10
+	var scaleFactor = 10; 
 
 	var newCenter = this.coordinates;
 	var viewBoxTranslate = [],
@@ -47,8 +46,22 @@ worldEvent.prototype.modifyViewbox = function(){
 
 	viewBoxTranslate[0] = newCenter[0] - viewBoxDimensions[0]/2;
 	viewBoxTranslate[1] = newCenter[1] - viewBoxDimensions[1]/2;
+	var time = 3000;
 	svg.transition().duration(3000).attr("viewBox", viewBoxTranslate[0] + " " + viewBoxTranslate[1] + " " + viewBoxDimensions[0] + " " + viewBoxDimensions[1]);
-	var scaleFactor = 1;
+	function scaleElements(dataArray){
+		for(var i = 0; i < dataArray.length; i++)
+			dataArray[i].strokeWidth = dataArray[i].strokeWidth / scaleFactor;
+	}
+	function scaleText(dataArray){
+		for(var i = 0; i < dataArray.length; i++)
+			dataArray[i].fontSize = dataArray[i].fontSize / scaleFactor;
+	}
+	scaleElements(data.land);
+	scaleElements(data.rivers);
+	scaleElements(data.territories);
+	scaleElements(data.cities);
+	scaleText(data.cities);
+	
 
 	//scaling features
 
@@ -60,50 +73,29 @@ worldEvent.prototype.happen = function(){
 	this.foundCity();
 	this.modifyViewbox();
 
+	svg.selectAll("#land")
+		.data(data.land)
+		.transition().duration(3000)
+		.attr("stroke-width", function(d) {return d.strokeWidth;});
+	svg.selectAll("#river")
+		.data(data.rivers)
+		.transition().duration(3000)
+		.attr("stroke-width", function(d) { return d.strokeWidth;});
 	svg.selectAll("#territory")
 		.data(data.territories)
-		.transition().duration(5000)
+		.transition().duration(3000)
+		.attr("stroke-width", function(d) {return d.strokeWidth;})
 		.attr("opacity", function(d) { return d.properties.opacity;});
 	svg.selectAll("#city")
 		.data(data.cities)
-		.transition().duration(5000)
+		.transition().duration(3000)
+		.attr("stroke-width", function(d) { return d.strokeWidth;})
 		.attr("opacity", function(d) { return d.properties.opacity;});
 	svg.selectAll(".CityLabel")
 		.data(data.cities)
-		.transition().duration(5000)
-		.attr("opacity", function(d) { return d.properties.opacity;});
+		.transition().duration(3000)
+		.style("font-size", function(d) { return d.fontSize;})
+		.attr("opacity", function(d) { console.log(d); return d.properties.opacity;});
 //	elements.territories
 }
 
-/*function interpolateZoom(translate, scale) {
-	var self = this;
-	return d3.transition().duration(8000).tween("zoom", function () {
-		var iTranslate = d3.interpolate(zoom.translate(), translate),
-		   iScale = d3.interpolate(zoom.scale(), scale);
-		return function (t) {
-			zoom
-				.scale(iScale(t))
-				.translate(iTranslate(t));
-			zoomed();
-		};
-	});
-}
-
-
-	//point centering attributable to bl.ocks.org/linssen/7352810
-	var translate = zoom.translate(),
-		translate0 = [],
-		l = [],
-		//view contains the coordinates of the viewbox and its current scale
-		view = {x: translate[0], y: translate[1], k: zoom.scale()};
-	console.log(translate);
-	console.log(center);
-
-	translate0 = [(center[0] - view.x) / view.k, (center[1] - view.y) / view.k];
-	view.k = scaleFactor;
-	l = [(translate0[0] + view.x)*view.k, (translate0[1] + view.y)*view.k];
-	console.log(l);
-	view.x += center[0];
-	view.y += center[1];
-	d3.transition().duration(8000).tween("zoom", function(){ zoom.scale(scaleFactor).translate([view.x, view.y]); zoomed();});
-//	interpolateZoom([view.x, view.y], view.k);*/

@@ -14,15 +14,14 @@
 .River{
 	fill: none;
 	stroke: #99f;
-	stroke-width: 1;
 }
 .Rome{
 	fill: #f66;
-	stroke: #dd4;
+	stroke: #ee4;
 }
 .Rome.City{
-	fill: #c33;
-	stroke: #dd0;
+	fill: #f33;
+	stroke: #222;
 }
 
 .Veii{
@@ -38,6 +37,5 @@
 .CityLabel{
 	-webkit-user-select: none;
 	-moz-user-select: none;
-	font-size: 7;
 	font-style: Times New Roman;
 }
