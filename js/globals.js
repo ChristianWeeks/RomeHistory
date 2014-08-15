@@ -27,7 +27,7 @@ var projection = d3.geo.albers()
 	.center([20,45])
 	.rotate([0, 0])
 	.parallels([28, 58])
-	.scale(2000)
+	.scale(3000)
 	.translate([width / 2, height / 2]);
 var path = d3.geo.path()
     .projection(projection);
@@ -38,6 +38,7 @@ var zoomCompensation = projection([0,0]);
 var svg = d3.select("body").append("svg")
     .style("width", "calc(100% - 200px)")
     .style("height", "calc(100% - 120px)")
+	.attr("viewBox", "0 0 " + width + " " + height)
 	.attr("preserveAspectRatio", "xMidYMid");
 
 	
@@ -49,20 +50,15 @@ var elements = {};
 var data = {};
 var dataMap = {};
 
-var zoom = d3.behavior.zoom()
+/*var zoom = d3.behavior.zoom()
 	.scale(1)
-	.scaleExtent([.05, 8])
+	.scaleExtent([.05, 25])
 	.translate([0,0])
 	.on("zoom", zoomed);
 svg.call(zoom);
 
 
-function zoomed() {
-/*	if(centerSpot)
-		centerSpot.remove();
-	centerSpot = svg.append("circle")
-		.attr("r", 10)
-		.attr("cx", zoom.translate	*/
+//function zoomed() {
 	elements.land.attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")")
 		.style("stroke-width", 2 / zoom.scale() );
 	elements.rivers.attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")")
@@ -73,7 +69,7 @@ function zoomed() {
 		.style("stroke-width", 2 / zoom.scale())
 		.attr("r", 3 / zoom.scale());
 	elements.cityLabels.attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")")
-		.style("font-size", 40 / zoom.scale());
+		.style("font-size", 30 / zoom.scale());
 
-}
+}*/
 

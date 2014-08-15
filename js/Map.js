@@ -109,7 +109,7 @@ d3.json("js/fixedEvents.json", function(error, eventData){
 		data.events.sort(function(a, b) { return a.properties.YearStart - b.properties.YearEnd;});
 		data.events.forEach(function(currEvent){
 			if(eventData.Data[currEvent.properties.Name]){
-				worldEventObjects[index] = new worldEvent(currEvent, eventData.Data[currEvent.properties.Name], zoom);	
+				worldEventObjects[index] = new worldEvent(currEvent, eventData.Data[currEvent.properties.Name]);	
 			}
 			else
 				console.log("No match found for " + currEvent.properties.Name);
@@ -117,7 +117,6 @@ d3.json("js/fixedEvents.json", function(error, eventData){
 		});
 		var centerSpot;
 
-		//zoomed();
 		timeline(timelineSvg, worldEventObjects);
 		/*svg.selectAll(".CityLabel")
 			.data(data.cities)

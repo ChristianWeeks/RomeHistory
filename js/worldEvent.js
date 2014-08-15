@@ -1,8 +1,7 @@
-function worldEvent(eventData, modifiers, zoom){
+function worldEvent(eventData, modifiers){
 	this.coordinates = projection(eventData.geometry.coordinates);
 	this.properties = eventData.properties;
 	this.modifiers = modifiers;
-	this.zoom = zoom;
 	
 }
 
@@ -38,24 +37,20 @@ worldEvent.prototype.writeToWrittenTimeline = function(){
 
 //moves the viewbox to give an appropriate view of the event
 worldEvent.prototype.modifyViewbox = function(){
-	var scaleFactor = 20;
+	var scaleFactor = 10
 
-	var center = this.coordinates;
+	var newCenter = this.coordinates;
+	var viewBoxTranslate = [],
+		viewBoxDimensions = [];
+	viewBoxDimensions[0] = width / scaleFactor;
+	viewBoxDimensions[1] = height / scaleFactor;
 
-	//point centering attributable to bl.ocks.org/linssen/7352810
-	var translate = zoom.translate(),
-		translate0 = [],
-		l = [],
-		//view contains the coordinates of the viewbox and its current scale
-		view = {x: translate[0], y: translate[1], k: zoom.scale()};
+	viewBoxTranslate[0] = newCenter[0] - viewBoxDimensions[0]/2;
+	viewBoxTranslate[1] = newCenter[1] - viewBoxDimensions[1]/2;
+	svg.transition().duration(3000).attr("viewBox", viewBoxTranslate[0] + " " + viewBoxTranslate[1] + " " + viewBoxDimensions[0] + " " + viewBoxDimensions[1]);
+	var scaleFactor = 1;
 
-	translate0 = [(center[0] - view.x) / view.k, (center[1] - view.y) / view.k];
-	view.k = scaleFactor;
-	l = [translate0[0]*view.k + view.x, translate0[1] * view.k + view.y];
-
-	view.x += center[0] - l[0];
-	view.y += center[1] - l[1];
-	interpolateZoom([view.x, view.y], view.k);
+	//scaling features
 
 }
 
@@ -80,7 +75,7 @@ worldEvent.prototype.happen = function(){
 //	elements.territories
 }
 
-function interpolateZoom(translate, scale) {
+/*function interpolateZoom(translate, scale) {
 	var self = this;
 	return d3.transition().duration(8000).tween("zoom", function () {
 		var iTranslate = d3.interpolate(zoom.translate(), translate),
@@ -95,3 +90,20 @@ function interpolateZoom(translate, scale) {
 }
 
 
+	//point centering attributable to bl.ocks.org/linssen/7352810
+	var translate = zoom.translate(),
+		translate0 = [],
+		l = [],
+		//view contains the coordinates of the viewbox and its current scale
+		view = {x: translate[0], y: translate[1], k: zoom.scale()};
+	console.log(translate);
+	console.log(center);
+
+	translate0 = [(center[0] - view.x) / view.k, (center[1] - view.y) / view.k];
+	view.k = scaleFactor;
+	l = [(translate0[0] + view.x)*view.k, (translate0[1] + view.y)*view.k];
+	console.log(l);
+	view.x += center[0];
+	view.y += center[1];
+	d3.transition().duration(8000).tween("zoom", function(){ zoom.scale(scaleFactor).translate([view.x, view.y]); zoomed();});
+//	interpolateZoom([view.x, view.y], view.k);*/
